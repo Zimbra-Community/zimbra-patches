@@ -33,33 +33,20 @@ function() {
 /* This method gets called when Zimbra Zimlet framework initializes
  */
 tk_barrydegraaff_disable_quick_reply.prototype.init = function() {
-   var currentSheet = null;
-    var i = 0;
-    var j = 0;
-    var ruleKey = null;
-
-    //loop through styleSheet(s)
-    for(i = 0; i<document.styleSheets.length; i++){
-        currentSheet = document.styleSheets[i];
-       currentSheet.insertRule(".ZmMailMsgCapsuleView .footer { display:none }", 1);
-        
-        ///loop through css Rules
-        for(j = 0; j< currentSheet.cssRules.length; j++){
-
-            //log selectorText to the console (what you're looking for)
-       
-            
-            if ( currentSheet.cssRules[j].selectorText == '.ZmMailMsgCapsuleView .footer')
-            {
-               
-            }
-
-            //uncomment to output all of the cssRule contents
-            /*for(var ruleKey in currentSheet.cssRules[j] ){
-                 console.log(ruleKey +': ' + currentSheet.cssRules[j][ruleKey ]);
-            }*/
-        }
-    }
+   try 
+   {
+      var currentSheet = null;
+      var i = 0;
+      var j = 0;
+      var ruleKey = null;
+      
+      //loop through styleSheet(s)
+      for(i = 0; i<document.styleSheets.length; i++){
+         currentSheet = document.styleSheets[i];
+         currentSheet.insertRule(".ZmMailMsgCapsuleView .footer { display:none; }", 1);
+         currentSheet.insertRule(".ReplyTextarea { display:none; }", 1);
+      }
+   } catch (err) {}   
 }
 
 /* This method is called when a message is viewed in Zimbra
@@ -68,16 +55,12 @@ tk_barrydegraaff_disable_quick_reply.prototype.init = function() {
  * 
  * */
 tk_barrydegraaff_disable_quick_reply.prototype.onMsgView = function (msg, oldMsg, msgView) {
-   //Only integrate in Mail app. Not in search results (as long as we have bugs there)
-   //if(appCtxt.getCurrentAppName()=='Mail')
-   //{
-      //Remove Zimlets infobar from previous message
-      try {
-      var elem = document.getElementById('main_MSGC'+msg.id+'__footer_reply');
-      elem.parentNode.removeChild(elem);
-      
-      var elem = document.getElementById('main_MSGC'+msg.id+'__footer_replyAll');
-      elem.parentNode.removeChild(elem);
-      } catch (err) {}
-   //}   
+   //Remove Zimlets infobar from previous message
+   try {
+   var elem = document.getElementById('main_MSGC'+msg.id+'__footer_reply');
+   elem.parentNode.removeChild(elem);
+   
+   var elem = document.getElementById('main_MSGC'+msg.id+'__footer_replyAll');
+   elem.parentNode.removeChild(elem);
+   } catch (err) {}   
 };   
