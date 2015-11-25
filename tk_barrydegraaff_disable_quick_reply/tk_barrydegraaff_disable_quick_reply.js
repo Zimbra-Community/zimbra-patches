@@ -43,7 +43,7 @@ tk_barrydegraaff_disable_quick_reply.prototype.init = function() {
       //loop through styleSheet(s)
       for(i = 0; i<document.styleSheets.length; i++){
          currentSheet = document.styleSheets[i];
-         currentSheet.insertRule(".ZmMailMsgCapsuleView .footer { display:none; }", 1);
+         //currentSheet.insertRule(".ZmMailMsgCapsuleView .footer { display:none; }", 1);
          currentSheet.insertRule(".ReplyTextarea { display:none; }", 1);
       }
    } catch (err) {}   
