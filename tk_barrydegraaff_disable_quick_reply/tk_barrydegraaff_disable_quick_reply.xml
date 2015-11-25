@@ -1,4 +1,4 @@
-<zimlet name="tk_barrydegraaff_disable_quick_reply" version="0.0.1" label="Disable quick reply" description="Disable quick reply in conversation view bug 101907">
+<zimlet name="tk_barrydegraaff_disable_quick_reply" version="0.0.2" label="Disable quick reply" description="Disable quick reply in conversation view bug 101907">
    <summary>
 
 work-around for https://bugzilla.zimbra.com/show_bug.cgi?id=101907

@@ -33,7 +33,33 @@ function() {
 /* This method gets called when Zimbra Zimlet framework initializes
  */
 tk_barrydegraaff_disable_quick_reply.prototype.init = function() {
- 
+   var currentSheet = null;
+    var i = 0;
+    var j = 0;
+    var ruleKey = null;
+
+    //loop through styleSheet(s)
+    for(i = 0; i<document.styleSheets.length; i++){
+        currentSheet = document.styleSheets[i];
+       currentSheet.insertRule(".ZmMailMsgCapsuleView .footer { display:none }", 1);
+        
+        ///loop through css Rules
+        for(j = 0; j< currentSheet.cssRules.length; j++){
+
+            //log selectorText to the console (what you're looking for)
+       
+            
+            if ( currentSheet.cssRules[j].selectorText == '.ZmMailMsgCapsuleView .footer')
+            {
+               
+            }
+
+            //uncomment to output all of the cssRule contents
+            /*for(var ruleKey in currentSheet.cssRules[j] ){
+                 console.log(ruleKey +': ' + currentSheet.cssRules[j][ruleKey ]);
+            }*/
+        }
+    }
 }
 
 /* This method is called when a message is viewed in Zimbra
