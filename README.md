@@ -8,7 +8,7 @@ Youtube zimlet no longer shows thumbnail [https://bugzilla.zimbra.com/show_bug.c
       cd /tmp
       rm -Rf com_zimbra_url.zip   
       su zimbra
-      wget https://raw.githubusercontent.com/barrydegraaff/zimbra-patches/master/com_zimbra_url.zip
+      wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/com_zimbra_url.zip
       zmzimletctl deploy com_zimbra_url.zip
 
 
@@ -20,6 +20,6 @@ This work-around removes the quick-reply and reply-all links in conversation vie
         rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_quick_reply/
         mkdir /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_quick_reply/
         cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_quick_reply/
-        wget https://raw.githubusercontent.com/barrydegraaff/zimbra-patches/master/tk_barrydegraaff_disable_quick_reply/tk_barrydegraaff_disable_quick_reply.xml
-        wget https://raw.githubusercontent.com/barrydegraaff/zimbra-patches/master/tk_barrydegraaff_disable_quick_reply/tk_barrydegraaff_disable_quick_reply.js
+        wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_disable_quick_reply/tk_barrydegraaff_disable_quick_reply.xml
+        wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_disable_quick_reply/tk_barrydegraaff_disable_quick_reply.js
       
