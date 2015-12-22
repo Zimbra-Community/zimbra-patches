@@ -11,15 +11,4 @@ Youtube zimlet no longer shows thumbnail [https://bugzilla.zimbra.com/show_bug.c
       wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/com_zimbra_url.zip
       zmzimletctl deploy com_zimbra_url.zip
 
-
-
-HTML <br> code in quick reply emails [https://bugzilla.zimbra.com/show_bug.cgi?id=101907](https://bugzilla.zimbra.com/show_bug.cgi?id=101907)
-
-This work-around removes the quick-reply and reply-all links in conversation view (the bug is still in search results)
-
-        rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_quick_reply/
-        mkdir /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_quick_reply/
-        cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_quick_reply/
-        wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_disable_quick_reply/tk_barrydegraaff_disable_quick_reply.xml
-        wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_disable_quick_reply/tk_barrydegraaff_disable_quick_reply.js
       
