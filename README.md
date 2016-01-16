@@ -12,3 +12,13 @@ Youtube zimlet no longer shows thumbnail [https://bugzilla.zimbra.com/show_bug.c
       zmzimletctl deploy com_zimbra_url.zip
 
       
+This work-around removes console.log 'spam' from ZeXtras chat https://bugzilla.zextras.com/show_bug.cgi?id=171
+
+        rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_zxlogging/
+        mkdir /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_zxlogging/
+        cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_disable_zxlogging/
+        wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_disable_zxlogging/tk_barrydegraaff_disable_zxlogging.xml
+        wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_disable_zxlogging/tk_barrydegraaff_disable_zxlogging.js
+
+
+      
