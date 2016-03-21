@@ -17,7 +17,7 @@ mv /opt/zimbra/jetty/webapps/zimbra/skins/_base/base3/skin.css /opt/zimbra/jetty
 
 ## Downloading the fixed Files from GitHub
 echo "Downloading the fixed Files from GitHub"
-wget --no-check-certificate https://raw.githubusercontent.com/jorgedlcruz/Zimbra/master/Zimbra%20Google%20Chrome%2045%20Fix/_base2skin.css https://raw.githubusercontent.com/jorgedlcruz/Zimbra/master/Zimbra%20Google%20Chrome%2045%20Fix/_base3skin.css
+wget --no-check-certificate https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/Zimbra%20Google%20Chrome%2045%20Fix/_base2skin.css https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/Zimbra%20Google%20Chrome%2045%20Fix/_base3skin.css
 
 ## Move the downloaded Files into the proper folder
 echo "Move the downloaded Files into the proper folder"
