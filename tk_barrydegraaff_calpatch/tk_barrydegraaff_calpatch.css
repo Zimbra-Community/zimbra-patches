@@ -1,0 +1,11 @@
+.calendar_body_hscroll
+{
+
+overflow: scroll !important;
+}
+
+.ZmCalDayTab
+{
+margin-top:-3px;
+padding-top:3px;
+}
