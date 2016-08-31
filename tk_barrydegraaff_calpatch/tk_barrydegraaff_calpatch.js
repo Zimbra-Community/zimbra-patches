@@ -45,6 +45,7 @@ calPatch.prototype.init = function() {
 
 ZmCalDayTabView.prototype._createHtml =
 function(abook) {
+   console.log('hierzo');
 	this._days = {};
 	this._columns = [];
 	this._hours = {};
@@ -213,8 +214,26 @@ function(abook) {
 	for (i = 0; i < ids.length; i++) {
 		this.associateItemWithElement(null, document.getElementById(ids[i]), types[i], ids[i]);
 	}
-	//this._scrollToTime(1);
-   try {
-   setTimeout(function(){ document.getElementsByClassName('calendar_body_hscroll')[0].scrollTop = 0; }, 300);
-   } catch (err) {console.log(err)};
+	this._scrollToTime(1);
+};
+
+ZmCalColView.prototype._scrollToTime =
+function(hour) {
+	hour = hour || 8; // default to 8am
+
+	if (!this._autoScrollDisabled) {
+		var bodyElement = document.getElementById(this._bodyDivId);
+        if (!bodyElement) { return; }
+		bodyElement.scrollTop = ZmCalColView._HOUR_HEIGHT*hour - 10;
+		this._syncScroll();
+	} else {
+		this._autoScrollDisabled = false;
+	}
+
+
+  if(document.getElementsByClassName('calendar_body_hscroll')[0])
+  {
+     setTimeout(function(){ document.getElementsByClassName('calendar_body_hscroll')[0].scrollTop = 0; }, 300);
+  }
+
 };
