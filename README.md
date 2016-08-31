@@ -1,6 +1,14 @@
 # zimbra-patches
 Provide patches for bugs in ZImbra
 
+## Calendar day view in 8.7 is broken if too many calendars are in the users account https://bugzilla.zimbra.com/show_bug.cgi?id=106285
+
+     rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_calpatch/
+     mkdir -p /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_calpatch/
+     cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_calpatch/
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_calpatch/tk_barrydegraaff_calpatch.css
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_calpatch/tk_barrydegraaff_calpatch.js
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_calpatch/tk_barrydegraaff_calpatch.xml
 
 
 ## Youtube zimlet no longer shows thumbnail [https://bugzilla.zimbra.com/show_bug.cgi?id=101814](https://bugzilla.zimbra.com/show_bug.cgi?id=101814)
