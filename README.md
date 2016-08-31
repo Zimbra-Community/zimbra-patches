@@ -10,6 +10,8 @@ Provide patches for bugs in ZImbra
      wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_calpatch/tk_barrydegraaff_calpatch.js
      wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_calpatch/tk_barrydegraaff_calpatch.xml
 
+If you don't see the patch, close your browser, maybe flush the cache and try again.
+
 
 ## Youtube zimlet no longer shows thumbnail [https://bugzilla.zimbra.com/show_bug.cgi?id=101814](https://bugzilla.zimbra.com/show_bug.cgi?id=101814)
 
