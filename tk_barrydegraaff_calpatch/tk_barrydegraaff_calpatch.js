@@ -29,7 +29,7 @@ function() {
 };
 
 /** 
- * Creates the Zimbra OpenPGP Zimlet, extends {@link https://files.zimbra.com/docs/zimlet/zcs/8.6.0/jsapi-zimbra-doc/symbols/ZmZimletBase.html ZmZimletBase}.
+ * Creates the Zimlet, extends {@link https://files.zimbra.com/docs/zimlet/zcs/8.6.0/jsapi-zimbra-doc/symbols/ZmZimletBase.html ZmZimletBase}.
  * @class
  * @extends ZmZimletBase
  *  */
@@ -45,7 +45,6 @@ calPatch.prototype.init = function() {
 
 ZmCalDayTabView.prototype._createHtml =
 function(abook) {
-   console.log('hierzo');
 	this._days = {};
 	this._columns = [];
 	this._hours = {};
@@ -138,7 +137,7 @@ function(abook) {
 
 	// div holding all day appts
 	html.append("<div id='", this._allDayApptScrollDivId, "' name='_allDayApptScrollDivId' class='calendar_allday_appt' style='position:absolute'>");
-	html.append("<div id='", this._allDayDivId, "' name='_allDayDivId' style='position:absolute; display:none'>");
+	html.append("<div id='", this._allDayDivId, "' name='_allDayDivId' style='position:absolute;'>");
 	html.append("<div id='", this._newAllDayApptDivId, "' name='_newAllDayApptDivId' class='appt-selected' style='position:absolute; display:none;'></div>");
 	html.append("</div>");
 	html.append("</div>");
