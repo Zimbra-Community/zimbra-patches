@@ -137,7 +137,8 @@ function(abook) {
 
 	// div holding all day appts
 	html.append("<div id='", this._allDayApptScrollDivId, "' name='_allDayApptScrollDivId' class='calendar_allday_appt' style='position:absolute'>");
-	html.append("<div id='", this._allDayDivId, "' name='_allDayDivId' style='position:absolute;'>");
+	html.append("<div id='", this._allDayHeadingDivId, "' name='_allDayHeadingDivId' style='", headerStyle,	"'></div>");
+   html.append("<div id='", this._allDayDivId, "' name='_allDayDivId' style='position:absolute;margin-top:20px'>");
 	html.append("<div id='", this._newAllDayApptDivId, "' name='_newAllDayApptDivId' class='appt-selected' style='position:absolute; display:none;'></div>");
 	html.append("</div>");
 	html.append("</div>");
@@ -167,7 +168,6 @@ function(abook) {
 	// grid body
     // Fix for bug: 66603. Removed horizontal scroll bar from grid body
 	html.append("<div id='", this._bodyDivId, "' name='_bodyDivId' class='calendar_body' style='position:absolute; overflow-x:hidden;'>");
-   html.append("<div id='", this._allDayHeadingDivId, "' name='_allDayHeadingDivId' style='", headerStyle,	"'></div>");
    html.append("<div id='", this._apptBodyDivId, "' name='_apptBodyDivId' class='ImgCalendarDayGrid' style='width:100%; height:1008px; position:absolute;background-color:#E3E3DC;'>");
 	html.append("<div id='", this._timeSelectionDivId, "' name='_timeSelectionDivId' class='calendar_time_selection' style='position:absolute; display:none;z-index:10;'></div>");
 	html.append("<div id='", this._newApptDivId, "' name='_newApptDivId' class='appt-selected' style='position:absolute; display:none;'></div>");
@@ -213,26 +213,5 @@ function(abook) {
 	for (i = 0; i < ids.length; i++) {
 		this.associateItemWithElement(null, document.getElementById(ids[i]), types[i], ids[i]);
 	}
-	this._scrollToTime(1);
-};
-
-ZmCalColView.prototype._scrollToTime =
-function(hour) {
-	hour = hour || 8; // default to 8am
-
-	if (!this._autoScrollDisabled) {
-		var bodyElement = document.getElementById(this._bodyDivId);
-        if (!bodyElement) { return; }
-		bodyElement.scrollTop = ZmCalColView._HOUR_HEIGHT*hour - 10;
-		this._syncScroll();
-	} else {
-		this._autoScrollDisabled = false;
-	}
-
-
-  if(document.getElementsByClassName('calendar_body_hscroll')[0])
-  {
-     setTimeout(function(){ document.getElementsByClassName('calendar_body_hscroll')[0].scrollTop = 0; }, 300);
-  }
-
+	this._scrollToTime(8);
 };
