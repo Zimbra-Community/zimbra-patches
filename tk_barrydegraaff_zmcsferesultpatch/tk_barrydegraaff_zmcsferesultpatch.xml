@@ -1,0 +1,4 @@
+<zimlet name="tk_barrydegraaff_zmcsferesultpatch" version="0.1" label="Bugfix 106285" description="Fix for https://bugzilla.zimbra.com/show_bug.cgi?id=106412" target="main view-window">
+	<include>tk_barrydegraaff_zmcsferesultpatch.js</include>
+	<handlerObject>tk_barrydegraaff_zmcsferesultpatch_HandlerObject</handlerObject>
+</zimlet>

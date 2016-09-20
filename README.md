@@ -13,6 +13,16 @@ Provide patches for bugs in ZImbra
 If you don't see the patch, close your browser, maybe flush the cache and try again.
 
 
+## Patch Shared mailbox task snoozing permission issue https://bugzilla.zimbra.com/show_bug.cgi?id=106412
+
+     rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_zmcsferesultpatch/
+     mkdir -p /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_zmcsferesultpatch/
+     cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_zmcsferesultpatch/
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_zmcsferesultpatch/tk_barrydegraaff_zmcsferesultpatch.css
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_zmcsferesultpatch/tk_barrydegraaff_zmcsferesultpatch.js
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_zmcsferesultpatch/tk_barrydegraaff_zmcsferesultpatch.xml
+
+
 ## Youtube zimlet no longer shows thumbnail [https://bugzilla.zimbra.com/show_bug.cgi?id=101814](https://bugzilla.zimbra.com/show_bug.cgi?id=101814)
 
       cd /tmp
