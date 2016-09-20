@@ -18,7 +18,6 @@ If you don't see the patch, close your browser, maybe flush the cache and try ag
      rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_zmcsferesultpatch/
      mkdir -p /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_zmcsferesultpatch/
      cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_zmcsferesultpatch/
-     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_zmcsferesultpatch/tk_barrydegraaff_zmcsferesultpatch.css
      wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_zmcsferesultpatch/tk_barrydegraaff_zmcsferesultpatch.js
      wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_zmcsferesultpatch/tk_barrydegraaff_zmcsferesultpatch.xml
 
