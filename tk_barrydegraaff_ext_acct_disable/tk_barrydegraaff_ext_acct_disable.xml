@@ -1,0 +1,3 @@
+<zimlet name="tk_barrydegraaff_ext_acct_disable" version="0.1" label="Bugfix 106132" description="Fix for https://bugzilla.zimbra.com/show_bug.cgi?id=106132" target="main view-window">
+   <includeCSS>tk_barrydegraaff_ext_acct_disable.css</includeCSS>
+</zimlet>
