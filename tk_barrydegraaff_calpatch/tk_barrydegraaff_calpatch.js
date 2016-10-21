@@ -40,7 +40,8 @@ var calPatch = tk_barrydegraaff_calpatch_HandlerObject;
  * calPatch uses the init function to load openpgp.js and configure the user settings and runtime variables.
  */
 calPatch.prototype.init = function() {
-
+try {
+AjxDispatcher.require(["Calendar"]);
 if(ZmCalDayTabView)
 {
    ZmCalDayTabView.prototype._createHtml =
@@ -216,6 +217,6 @@ if(ZmCalDayTabView)
       this._scrollToTime(8);
    };
 }
-
+} catch (err) { console.log('calpatch err'+err);}
 }
 

@@ -1,4 +1,4 @@
-<zimlet name="tk_barrydegraaff_calpatch" version="0.3" label="Bugfix 106285" description="Fix for https://bugzilla.zimbra.com/show_bug.cgi?id=106285" target="main view-window">
+<zimlet name="tk_barrydegraaff_calpatch" version="0.4" label="Bugfix 106285" description="Fix for https://bugzilla.zimbra.com/show_bug.cgi?id=106285" target="main view-window">
 	<include>tk_barrydegraaff_calpatch.js</include>
 	<handlerObject>tk_barrydegraaff_calpatch_HandlerObject</handlerObject>
    <includeCSS>tk_barrydegraaff_calpatch.css</includeCSS>
