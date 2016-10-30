@@ -33,7 +33,7 @@ If you don't see the patch, close your browser, maybe flush the cache and try ag
      wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_zmcsferesultpatch/tk_barrydegraaff_zmcsferesultpatch.xml
 
 
-## Youtube zimlet no longer shows thumbnail [https://bugzilla.zimbra.com/show_bug.cgi?id=101814](https://bugzilla.zimbra.com/show_bug.cgi?id=101814)
+## Only on 8.6: Youtube zimlet no longer shows thumbnail [https://bugzilla.zimbra.com/show_bug.cgi?id=101814](https://bugzilla.zimbra.com/show_bug.cgi?id=101814)
 
       cd /tmp
       rm -Rf com_zimbra_url.zip   
