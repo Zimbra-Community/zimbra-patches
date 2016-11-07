@@ -12,7 +12,7 @@ Provide patches for bugs in ZImbra
 This patch will remove the external accounts settings page from the UI. (the back-end will still allow it, if the users crafts the soap request or changes the DOM).
 
 
-## Calendar day view in 8.7 is broken if too many calendars are in the users account https://bugzilla.zimbra.com/show_bug.cgi?id=106285
+## Calendar day view in 8.7 & 8.7.1 is broken if too many calendars are in the users account https://bugzilla.zimbra.com/show_bug.cgi?id=106285
 
      rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_calpatch/
      mkdir -p /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_calpatch/
