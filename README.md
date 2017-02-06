@@ -8,8 +8,8 @@ Multiple day spanning events are displayed incorrectly in Zimbra 8.7.2. At this 
 https://bugzilla.zimbra.com/show_bug.cgi?id=107583
 
      cp -ax /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore_all.js.zgz /root/
-     cp -ax /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore_all.js /root
-     cp -ax /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore.js /root
+     cp -ax /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore_all.js /root/
+     cp -ax /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore.js /root/
      cd /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/
      
      wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/8.7.2-107583-calendar-patch/8.7.1/CalendarCore_all.js.zgz -O /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore_all.js.zgz
