@@ -1,22 +1,6 @@
 # zimbra-patches
 Provide patches for bugs in ZImbra
 
-## 8.7.2 Calendar breaks month view
-
-Multiple day spanning events are displayed incorrectly in Zimbra 8.7.2. At this time we worked around that by using the calendar code from 8.7.1.
-
-https://bugzilla.zimbra.com/show_bug.cgi?id=107583
-
-     cp -ax /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore_all.js.zgz /root/
-     cp -ax /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore_all.js /root/
-     cp -ax /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore.js /root/
-     cd /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/
-     
-     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/8.7.2-107583-calendar-patch/8.7.1/CalendarCore_all.js.zgz -O /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore_all.js.zgz
-     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/8.7.2-107583-calendar-patch/8.7.1/CalendarCore_all.js -O /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore_all.js
-     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/8.7.2-107583-calendar-patch/8.7.1/CalendarCore.js -O /opt/zimbra/jetty-distribution-9.3.5.v20151012/webapps/zimbra/js/CalendarCore.js
-
-
 ## Can't Disable External Imap and pop3 Access through cos and per user basis. https://bugzilla.zimbra.com/show_bug.cgi?id=106132
 
      rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_ext_acct_disable/
@@ -26,18 +10,6 @@ https://bugzilla.zimbra.com/show_bug.cgi?id=107583
      wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_ext_acct_disable/tk_barrydegraaff_ext_acct_disable.xml
 
 This patch will remove the external accounts settings page from the UI. (the back-end will still allow it, if the users crafts the soap request or changes the DOM).
-
-
-## Calendar day view in 8.7 & 8.7.1 is broken if too many calendars are in the users account https://bugzilla.zimbra.com/show_bug.cgi?id=106285
-
-     rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_calpatch/
-     mkdir -p /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_calpatch/
-     cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_calpatch/
-     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_calpatch/tk_barrydegraaff_calpatch.css
-     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_calpatch/tk_barrydegraaff_calpatch.js
-     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_calpatch/tk_barrydegraaff_calpatch.xml
-
-If you don't see the patch, close your browser, maybe flush the cache and try again.
 
 
 ## Patch Shared mailbox task snoozing permission issue https://bugzilla.zimbra.com/show_bug.cgi?id=106412
