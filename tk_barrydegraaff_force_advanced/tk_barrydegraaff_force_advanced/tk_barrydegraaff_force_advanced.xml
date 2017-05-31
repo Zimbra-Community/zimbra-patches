@@ -1,0 +1,4 @@
+<zimlet name="tk_barrydegraaff_force_advanced" version="0.1" label="Use Advanced" description="Force the use of the Advanced AJAX Client">
+	<include>tk_barrydegraaff_force_advanced.js</include>
+	<handlerObject>tk_barrydegraaff_force_advanced_HandlerObject</handlerObject>
+</zimlet>

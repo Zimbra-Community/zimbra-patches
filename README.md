@@ -1,6 +1,17 @@
 # zimbra-patches
 Provide patches for bugs in ZImbra
+## Force use of Advanced AJAX Interface
 
+     rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_force_advanced/
+     mkdir -p /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_force_advanced/
+     cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_force_advanced/
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_force_advanced/tk_barrydegraaff_force_advanced/tk_barrydegraaff_force_advanced.xml
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_force_advanced/tk_barrydegraaff_force_advanced/tk_barrydegraaff_force_advanced.js
+
+This patch will prevent users from switching to the Standard HTML interface as the default setting (Preferences page). This works as long as you use pre-authentication and set Ajax there.
+This script will list the current setting for all users: https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_force_advanced/bin/force-ajax.sh
+     
+     
 ## Can't Disable External Imap and pop3 Access through cos and per user basis. https://bugzilla.zimbra.com/show_bug.cgi?id=106132
 
      rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_ext_acct_disable/
