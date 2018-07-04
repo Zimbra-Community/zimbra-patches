@@ -41,64 +41,69 @@ var enableSortTo = tk_barrydegraaff_enable_sortto_HandlerObject;
  */
 enableSortTo.prototype.init = function() {
    AjxDispatcher.require(["MailCore", "Mail"]);
-   console.log("tk_barrydegraaff_enable_sortto: overriding ZmMailListView.prototype._setupSortMenu");
-
-   /* See also:
-   The SOAP sortBy documentation seems to be incomplete:
-   https://files.zimbra.com/docs/soap_api/8.8.8/api-reference/zimbraMail/Search.html#tbl-SearchRequest-sortBy
+   try {
    
-   It looks like one can use all the sorts defined in: 
-   zm-mailbox/store/src/java/com/zimbra/cs/index/SortBy.java
-   
-   The UI parts are here:
-   zm-web-client/WebRoot/js/zimbraMail/mail/view/ZmMailListView.js _setupSortMenu and _getSingleColumnSortFields 
-   zm-web-client/WebRoot/js/zimbraMail/share/view/ZmListView.js _getSortMenu
-   
-   The list of sortables is in the UI in: 
-   ZmMailListView.SINGLE_COLUMN_SORT (TO is already implemented, but normally only shown in the Sent items)
-    
-   override _setupSortMenu
-   */
-   ZmMailListView.prototype._setupSortMenu = function(parent, includeGroupByMenu) {
-   
-      var activeSortBy = this.getActiveSearchSortBy();
-      var defaultSort = activeSortBy && ZmMailListView.SORTBY_HASH[activeSortBy] ?
-         ZmMailListView.SORTBY_HASH[activeSortBy].field : ZmItem.F_DATE;
-      var sortMenu = this._getSortMenu(this._getSingleColumnSortFields(), defaultSort, parent);
-   
-      if (includeGroupByMenu) {
-         this._groupByActionMenu = this._getGroupByActionMenu(sortMenu);
-         this._setGroupByCheck();
-      }
-      var mi = sortMenu.getMenuItem(ZmItem.F_FROM);
-      if (mi) {
-         mi.setVisible(!this._isOutboundFolder());
-      }
-      mi = sortMenu.getMenuItem(ZmItem.F_TO);
-      if (mi) {
-         //mi.setVisible(this._isOutboundFolder());
-      }
-   
-      return sortMenu;
-   };
-   
-   //same thing for ZmConvListView
-   ZmConvListView.prototype._getActionMenuForColHeader =
-   function(force) {
-   
-      var menu = ZmMailListView.prototype._getActionMenuForColHeader.apply(this, arguments);
-      if (!this.isMultiColumn()) {
-         var mi = this._colHeaderActionMenu.getMenuItem(ZmItem.F_FROM);
-         if (mi) {
-            mi.setVisible(false);
+      /* See also:
+      The SOAP sortBy documentation seems to be incomplete:
+      https://files.zimbra.com/docs/soap_api/8.8.8/api-reference/zimbraMail/Search.html#tbl-SearchRequest-sortBy
+      
+      It looks like one can use all the sorts defined in: 
+      zm-mailbox/store/src/java/com/zimbra/cs/index/SortBy.java
+      
+      The UI parts are here:
+      zm-web-client/WebRoot/js/zimbraMail/mail/view/ZmMailListView.js _setupSortMenu and _getSingleColumnSortFields 
+      zm-web-client/WebRoot/js/zimbraMail/share/view/ZmListView.js _getSortMenu
+      
+      The list of sortables is in the UI in: 
+      ZmMailListView.SINGLE_COLUMN_SORT (TO is already implemented, but normally only shown in the Sent items)
+       
+      override _setupSortMenu
+      */
+      ZmMailListView.prototype._setupSortMenu = function(parent, includeGroupByMenu) {
+      
+         var activeSortBy = this.getActiveSearchSortBy();
+         var defaultSort = activeSortBy && ZmMailListView.SORTBY_HASH[activeSortBy] ?
+            ZmMailListView.SORTBY_HASH[activeSortBy].field : ZmItem.F_DATE;
+         var sortMenu = this._getSortMenu(this._getSingleColumnSortFields(), defaultSort, parent);
+      
+         if (includeGroupByMenu) {
+            this._groupByActionMenu = this._getGroupByActionMenu(sortMenu);
+            this._setGroupByCheck();
          }
-         mi = this._colHeaderActionMenu.getMenuItem(ZmItem.F_TO);
+         var mi = sortMenu.getMenuItem(ZmItem.F_FROM);
          if (mi) {
-            //mi.setVisible(false);
+            mi.setVisible(!this._isOutboundFolder());
          }
-      }
-      return menu;
-};
-   
+         mi = sortMenu.getMenuItem(ZmItem.F_TO);
+         if (mi) {
+            //mi.setVisible(this._isOutboundFolder());
+         }
+      
+         return sortMenu;
+      };
+      
+      //same thing for ZmConvListView
+      ZmConvListView.prototype._getActionMenuForColHeader =
+      function(force) {
+      
+         var menu = ZmMailListView.prototype._getActionMenuForColHeader.apply(this, arguments);
+         if (!this.isMultiColumn()) {
+            var mi = this._colHeaderActionMenu.getMenuItem(ZmItem.F_FROM);
+            if (mi) {
+               mi.setVisible(false);
+            }
+            mi = this._colHeaderActionMenu.getMenuItem(ZmItem.F_TO);
+            if (mi) {
+               //mi.setVisible(false);
+            }
+         }
+         return menu;
+      };
+      console.log("tk_barrydegraaff_enable_sortto: overriding ZmMailListView.prototype._setupSortMenu");
+   }
+   catch(err)
+   {
+      console.log("tk_barrydegraaff_enable_sortto: ERROR" + err);
+   }   
 };
 
