@@ -1,5 +1,16 @@
 # zimbra-patches
-Provide patches for bugs in ZImbra
+Provide patches for bugs in Zimbra
+
+## Enable sorting by TO in the Web UI
+
+     rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_enable_sortto/
+     mkdir -p /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_enable_sortto/
+     cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_enable_sortto/
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_enable_sortto/tk_barrydegraaff_enable_sortto.xml
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_enable_sortto/tk_barrydegraaff_enable_sortto.js
+
+This will enable a sort by TO menu action in the email list.
+
 ## Force use of Advanced AJAX Interface
 
      rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_force_advanced/
