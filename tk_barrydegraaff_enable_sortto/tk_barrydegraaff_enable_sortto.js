@@ -81,5 +81,24 @@ enableSortTo.prototype.init = function() {
    
       return sortMenu;
    };
+   
+   //same thing for ZmConvListView
+   ZmConvListView.prototype._getActionMenuForColHeader =
+   function(force) {
+   
+      var menu = ZmMailListView.prototype._getActionMenuForColHeader.apply(this, arguments);
+      if (!this.isMultiColumn()) {
+         var mi = this._colHeaderActionMenu.getMenuItem(ZmItem.F_FROM);
+         if (mi) {
+            mi.setVisible(false);
+         }
+         mi = this._colHeaderActionMenu.getMenuItem(ZmItem.F_TO);
+         if (mi) {
+            //mi.setVisible(false);
+         }
+      }
+      return menu;
+};
+   
 };
 
