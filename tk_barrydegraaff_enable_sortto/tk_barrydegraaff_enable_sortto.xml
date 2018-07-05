@@ -1,4 +1,4 @@
-<zimlet name="tk_barrydegraaff_enable_sortto" version="0.2" label="Enable sort by TO" description="Enable sort by TO in the email list">
+<zimlet name="tk_barrydegraaff_enable_sortto" version="0.3" label="Enable sort by TO" description="Enable sort by TO in the email list">
 	<include>tk_barrydegraaff_enable_sortto.js</include>
 	<handlerObject>tk_barrydegraaff_enable_sortto_HandlerObject</handlerObject>
 </zimlet>
