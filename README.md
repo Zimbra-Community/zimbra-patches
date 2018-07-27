@@ -1,6 +1,15 @@
 # zimbra-patches
 Provide patches for bugs in Zimbra
 
+## Enable p7s attachments (application/pkcs7-signature) in webUI
+Customer cannot add p7s attachments, nor can the client view them from the webUI. This Zimlet reverts the ignoring of application/pkcs7-signature that was introduced in bugzilla 69476.
+
+     rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_enable_pkcs7_signature
+     mkdir -p /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_enable_pkcs7_signature
+     cd /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_enable_pkcs7_signature
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_enable_pkcs7_signature/tk_barrydegraaff_enable_pkcs7_signature.xml
+     wget https://raw.githubusercontent.com/Zimbra-Community/zimbra-patches/master/tk_barrydegraaff_enable_pkcs7_signature/tk_barrydegraaff_enable_pkcs7_signature.js
+
 ## Enable sorting by TO in the Web UI
 
      rm -Rf /opt/zimbra/zimlets-deployed/_dev/tk_barrydegraaff_enable_sortto/

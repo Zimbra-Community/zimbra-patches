@@ -1,0 +1,4 @@
+<zimlet name="tk_barrydegraaff_enable_pkcs7_signature" version="0.1" label="Enable pkcs7-signature attachment" description="Enable pkcs7-signature attachment">
+	<include>tk_barrydegraaff_enable_pkcs7_signature.js</include>
+	<handlerObject>tk_barrydegraaff_enable_pkcs7_signature_HandlerObject</handlerObject>
+</zimlet>
