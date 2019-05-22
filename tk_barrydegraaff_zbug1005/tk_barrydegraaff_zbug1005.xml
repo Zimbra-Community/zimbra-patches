@@ -1,0 +1,4 @@
+<zimlet name="tk_barrydegraaff_zbug1005" version="0.1" label="Bugfix ZBUG-1005" description="Incoming appointment requests via mailview are not applied to the calendar that is listed as default instead the appointments are added to the primary Calendar, since 8.8.11. See https://github.com/Zimbra/zm-web-client/commit/c170de15380e5bf820cfe6341d32e625664cd8c0#diff-8cd4bb295cdcc2bf53e92ae8ae98827dR1372" target="main view-window">
+	<include>tk_barrydegraaff_zbug1005.js</include>
+	<handlerObject>tk_barrydegraaff_zbug1005_HandlerObject</handlerObject>
+</zimlet>
