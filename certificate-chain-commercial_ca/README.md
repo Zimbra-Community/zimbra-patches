@@ -104,6 +104,7 @@ Usually when you reach the point where you see the Root-keyword in the certifica
 The final step is to obtain all the certificate files from Digicert and place them in a folder `/tmp/digicert` on your Zimbra server. Then create `commercial_ca.crt` as described below and verify and deploy:
 
 ```
+su zimbra
 mkdir /tmp/digicert
 cd  /tmp/digicert
 wget https://cacerts.digicert.com/DigiCertTLSRSASHA2562020CA1-1.crt.pem
